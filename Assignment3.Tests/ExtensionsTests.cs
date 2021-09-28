@@ -15,7 +15,7 @@ namespace BDSA2020.Assignment02.Tests
             };
 
             // Act
-            var output = Iterators.Flatten<int>(list);
+            var output = Extensions.Flatten<int>(list);
 
             // Assert
             Assert.Equal(new[] {1,2,3,4,5,6,7,8,9,10}, output);
@@ -28,7 +28,7 @@ namespace BDSA2020.Assignment02.Tests
             Predicate<int> predicate = (int i) => i % 2 == 0;
 
             // Act
-            var output = Iterators.Filter<int>(list, predicate);
+            var output = Extensions.Filter<int>(list, predicate);
 
             // Asset
             Assert.Equal(new[] {2,4}, output);
