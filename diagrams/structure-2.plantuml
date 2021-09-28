@@ -1,0 +1,42 @@
+@startuml
+rectangle Users {
+    actor User1
+    actor User2
+    actor User3
+    actor User4
+    actor User.. as userx
+}
+
+node LoadBalancer
+User1 --> LoadBalancer : Traffic
+User2 --> LoadBalancer : Traffic
+User3 --> LoadBalancer : Traffic
+User4 --> LoadBalancer : Traffic
+userx --> LoadBalancer : Traffic
+
+node Node1 {
+    rectangle AppPod1 as node1AppPod1
+    rectangle AppPod2 as node1AppPod2
+    rectangle AppPod3 as node1AppPod3
+    rectangle AppPod4 as node1AppPod4
+    rectangle AppPod... as node1AppPodx
+} 
+
+node Node2 {
+    rectangle AppPod1
+    rectangle AppPod2
+    rectangle AppPod3
+    rectangle AppPod4
+    rectangle AppPod...
+}
+
+LoadBalancer --> Node1 : Traffic
+LoadBalancer --> Node2 : Traffic
+
+node Node3 {
+    database Database
+}
+
+Node1 <--> Database : Database requests
+Node2 <--> Database : Database requests
+@enduml

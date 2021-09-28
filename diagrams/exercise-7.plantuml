@@ -1,0 +1,37 @@
+@startuml
+participant Pointer
+participant Icon
+participant Trashcan
+
+participant FileCopy
+
+participant File
+participant Folder
+participant Disk
+
+activate Pointer
+Pointer -> File : dragTo(x,y)
+Pointer -> File : clickAndHold(x,y)
+activate File
+File -> File : select()
+
+Pointer -> File : dragTo(x,y)
+File -> CopyFile : new
+activate CopyFile
+File -> CopyFile : setTargetFile(this)
+CopyFile -> File : checkRead()
+
+Pointer -> Folder : release(x,y)
+deactivate Pointer
+activate Folder
+
+Folder -> CopyFile : setDestination()
+CopyFile -> Folder : checkWrite()
+deactivate Folder
+CopyFile -> Disk : allocateSpace()
+activate Disk
+CopyFile -> File : readData()
+deactivate File
+CopyFile -> Disk : writeData()
+deactivate Disk
+@enduml

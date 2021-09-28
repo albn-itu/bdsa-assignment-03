@@ -1,0 +1,27 @@
+@startuml
+class Employee {
+    name: string
+    badgeNumber: int
+}
+
+class FieldOfficer {
+}
+class Dispatcher {   
+}
+
+Employee <|-- FieldOfficer
+Employee <|-- Dispatcher
+
+class EmergencyReport
+hide EmergencyReport members
+
+FieldOfficer "author 1" -- "reportsGenerated *" EmergencyReport
+
+class Incident {
+    assignResources()
+    close()
+}
+
+EmergencyReport "1..* reports" -- "1" Incident
+Incident "* incidentsGenerated" -- "initiator 1" Dispatcher
+@enduml
