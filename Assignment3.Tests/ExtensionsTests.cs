@@ -66,7 +66,7 @@ namespace Assignment3
         }
 
         [Fact]
-        public void TestName()
+        public void WordCount_Given_3Words_returns_correctly()
         {
         //Arrange
         var word = "I have commited several war crimes";
