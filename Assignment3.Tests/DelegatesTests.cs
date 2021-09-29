@@ -2,7 +2,7 @@ using Xunit;
 using System;
 using System.Linq;
 
-namespace BDSA2020.Assignment02.Tests
+namespace Assignment3.Tests
 {
     public class DelegatesTests
     {
