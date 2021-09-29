@@ -9,7 +9,7 @@ namespace Assignment3
         {
             var wizards = Wizard.Wizards.Value;
 
-            Assert.Equal(2, wizards.Count);
+            Assert.Equal(14, wizards.Count);
         }
 
         [Theory]

@@ -15,6 +15,7 @@ namespace Assignment3
             };
 
             // Act
+
             var actual = Extensions.Flatten(list);
             var expected = new[] {1,2,3,4,5,6,7,8,9,10};
 
@@ -28,8 +29,10 @@ namespace Assignment3
             var list = new[]{ 42, 45, 49, 70};
 
             // Act
+
             var actual = Extensions.Filter(list);
             var expected = new[]{49, 70};
+
 
             // Assert
             Assert.Equal(expected, actual);
