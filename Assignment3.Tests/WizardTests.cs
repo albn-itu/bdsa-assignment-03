@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace Assignment3
+namespace Assignment3.Tests
 {
     public class WizardTests
     {
